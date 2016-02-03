@@ -9,9 +9,16 @@ class Position
 	end
 
 	def move(index)
-		@board[index] = @turn
-		@turn = xturn  #Function to change turn
-		return self
+		temp = Position.new(@board.dup)
+		
+		temp.board[index] = @turn
+		temp.turn = xturn
+		# @board[index] = @turn
+		# @turn = xturn 
+		#puts @board #Function to change turn
+		# return self
+		return temp
+
 	end
 
 	# def possible_moves
